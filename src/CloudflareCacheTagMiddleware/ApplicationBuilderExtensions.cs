@@ -17,5 +17,10 @@ namespace ForefrontSolutions.CloudflareCacheTagMiddleware
 		{
 			return app.UseMiddleware<CacheTagMiddleware>(cacheTags);
 		}
+
+		public static IApplicationBuilder UseCloudflareCacheTagMiddleware(this IApplicationBuilder app, CacheTags cacheTags, params CacheTagFileTypeFilter[] fileTypeFilters)
+		{
+			return app.UseMiddleware<CacheTagMiddleware>(cacheTags, fileTypeFilters);
+		}
 	}
 }
