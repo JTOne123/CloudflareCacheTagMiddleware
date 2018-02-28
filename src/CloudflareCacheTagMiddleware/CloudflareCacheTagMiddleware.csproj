@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.0</TargetFramework>
+		<RootNamespace>ForefrontSolutions.CloudflareCacheTagMiddleware</RootNamespace>
+		<Authors>Ashley Poole</Authors>
+		<Product>Cloudflare Cache Tag Middleware</Product>
+		<Description>ASP.NET Core middleware for adding the Cloudflare cache tag header to all requests.</Description>
+		<RepositoryUrl>https://github.com/AshleyPoole/CloudflareCacheTagMiddleware</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/AshleyPoole/CloudflareCacheTagMiddleware</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/AshleyPoole/CloudflareCacheTagMiddleware/blob/master/LICENSE</PackageLicenseUrl>
+		<PackageTags>Cloudflare Cache Tag Middleware</PackageTags>
+		<PackageVersion>1.0.1</PackageVersion>
+		<PackageReleaseNotes>Release of Cloudflare cache middleware for ASP.NET Core.</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.0.1" />
+	</ItemGroup>
+
+</Project>
