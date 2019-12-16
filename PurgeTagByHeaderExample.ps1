@@ -13,7 +13,11 @@ $zones = Invoke-RestMethod -Uri "$zonesApiUrl/?name=$zoneDomainName" -Method Get
 
 if ($zones.result.Count -ne 1)
 {
-    Throw "Lookup for $zoneDomainName zone found $($zones.result.Count) results. 1 result should of been found. Unable to purge cache."
+    $zoneCount = $zones.result.Count
+    Throw "Lookup for $zoneDomainName zone found $zoneCount. 1 zone should of been found. Unable to purge cache."
 }
 
-Invoke-RestMethod -Uri "$zonesApiUrl/$($zones.result.Id)/purge_cache" -Method Delete -Headers $headers -Body $('{"tags":["' + $cacheTag + '"]}') -ErrorAction Stop
+$zoneId = $zones.result.Id
+$purgeRequestBody = '{"tags":["' + $cacheTag + '"]}'
+
+Invoke-RestMethod -Uri "$zonesApiUrl/$zoneId/purge_cache" -Method Delete -Headers $headers -Body $purgeRequestBody -ErrorAction Stop
